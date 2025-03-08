@@ -22,7 +22,7 @@ on:
 
 jobs:
   plan_and_apply:
-    uses: ./.github/workflows/cd-template.yaml@main
+    uses: ./.github/workflows/cd-template.yaml
     name: "CD"
     permissions:
       id-token: write
