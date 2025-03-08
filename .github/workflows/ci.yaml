@@ -7,19 +7,19 @@ on:
   workflow_dispatch:
     inputs:
       terraform_cli_version:
-        description: 'Terraform CLI Version'
+        description: "Terraform CLI Version"
         required: true
-        default: 'latest'
+        default: "latest"
         type: string
 
 jobs:
   validate_and_plan:
-    uses: QBS81/alz-mgmt-templates/.github/workflows/ci-template.yaml@main
-    name: 'CI'
+    uses: .github/workflows/ci-template.yaml@main
+    name: "CI"
     permissions:
       id-token: write
       contents: read
       pull-requests: write
     with:
-      root_module_folder_relative_path: '.'
+      root_module_folder_relative_path: "."
       terraform_cli_version: ${{ inputs.terraform_cli_version }}
